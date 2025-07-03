@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-app-service
+  namespace: web-app
+spec:
+  selector:
+    app: fort-webapp
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 80            # Port exposed by the service
+    targetPort: 80      # Port inside the pod (from containerPort) 

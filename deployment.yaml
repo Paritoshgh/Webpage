@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+  labels:
+    app: fort-webapp
+  namespace: web-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fort-webapp
+  template:
+     metadata:
+       labels:
+         app: fort-webapp
+     spec:
+       containers:
+       - name: webapp-container
+         image: ghadgeparitosh10/webpage:latest
+         ports:
+         - containerPort: 80      
