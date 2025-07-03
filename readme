@@ -5,3 +5,18 @@ RUN rm -rf ./* – deletes the default files (like index.html) so they don't ove
 COPY . /usr/share/nginx/html – puts your index.html and other assets right where Nginx expects them.
 
 Nginx is now serving your files, not its default page.
+
+Kubernetes:
+
+Kubernetes Deployment Check:
+kubectl get deployment --namespace=web-app -o wide
+
+Kubenetes Service
+kubectl get svc --namespace=web-app -o wide
+
+To Run the service on minikube local machine
+minikube service web-app-service -n web-app
+
+To run app on Ngrok use bash script via following cmd:
+chmod +x run.sh 
+./run.sh 
